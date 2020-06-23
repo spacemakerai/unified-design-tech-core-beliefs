@@ -96,6 +96,14 @@ Time to value and reliability go hand in hand - done right, the efforts to maint
 
 _Even though ownership is clearly defined, we must always encourage and celebrate the input and help of others - whether it means another squad writing pull requests in your code or someone from the “outside” challenging your technical choices._
 
+## What was the preferred choice a yesterday, might not be the preferred today
+
+_We make decisions based on assumptions and what we know all the time. But as tech evolve at a rapid pace, it's important to double check your truth when making an important decision._
+
+___
+
+What was missing from a cloud provider yesterday, might not be missing today. What we needed to develop ourselves yesterday might be possible to outsource and minimize ownership of today. What was the preferred way of doing something, might not be today. It is important to always try to look for solutions outside our daily ecosystem before we conclude on something.
+
 ## Learn to let go of control and embrace chaos 
 _As the company and the complexity of our software grows, we will inevitably feel that we lose more and more control. And our focus on autonomy will make this feeling of chaos come sooner than in a strictly ruled organization. But make no mistake, in any organization the sense of control will fade when the complexity gets big enough._
 ___
