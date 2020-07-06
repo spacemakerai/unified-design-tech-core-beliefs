@@ -11,6 +11,7 @@ This document dives into what this means for infrastructure, architecture and wa
 - [There is no perfect answer - The Art of Compromise](#there-is-no-perfect-answer---the-art-of-compromise)
 - [Prefer sharing knowledge _over_ sharing code](#prefer-sharing-knowledge-over-sharing-code)
 - [Minimize ownership, make it somebody else’s problem](#minimize-ownership-make-it-somebody-elses-problem)
+- [Avoid “leaky” abstractions](#avoid-leaky-abstractions)
 - [You ain’t gonna need it](#you-aint-gonna-need-it)
 - [Choose simple over easy](#choose-simple-over-easy)
 - [Moving fast without breaking things](#moving-fast-without-breaking-things)
@@ -55,7 +56,10 @@ So, start every day looking for stuff we could throw away and replace with somet
 
 Own as little as possible, and build the things you own so that others don’t need to know or care how it works. This reduces time to value dramatically, as you can move forward independently of both the services you consume and of your consumers.
 
-Avoid “leaky” abstractions between domains and ownerships - your domain specific requirements should not be encoded in a service or component owned by others. Squads should strive not to have dependencies on each other, making them subject to the prioritizations in other squads. As we are working on the same product, with shared data, there will always be a need for squads to interact. These interactions should be as static and well defined as possible. 
+## Avoid “leaky” abstractions
+
+_Avoid “leaky” abstractions between domains and ownerships - your domain specific requirements should not be encoded in a service or component owned by others. Squads should strive not to have dependencies on each other, making them subject to the prioritizations in other squads. As we are working on the same product, with shared data, there will always be a need for squads to interact. These interactions should be as static and well defined as possible._
+___ 
 
 _Example_: if a service that stores geometry needs to adhere to a certain structure to work with your service, but this requirement is true only for your service - not for other users of the service. This would limit the ones that own the service from innovating at their own pace - OR it would cause your service to often crash unexpectedly. The abstraction is “leaky”. 
 
