@@ -24,7 +24,7 @@ This document dives into what this means for infrastructure, architecture and wa
 _Ultimately we want to optimize for time to value, and we believe the biggest driver is a team's ability to be fully autonomous. Instead of the traditional approach of focusing on consistency and reuse, an autonomous team will tend to create decoupled, messy, duplicated and emergent architectures._
 ___
 
-It is a common reflex for software developers to strive for consistency and reuse, hoping you can achieve some sort of control of the total system and to make sure you don’t waste resources by building the same things twice. In the long run though, these architectures often end up as very hard to change, and can require whole development teams dedicated to maintaining these services and shared platforms.
+It is a common reflex for software developers to strive for consistency and reuse, hoping you can achieve some sort of control of the total system and to make sure you don’t waste resources by building the same things twice. In the long run though, these architectures often end up as very hard to change.
 
 The more a component is reused the more it will need to grow into a one-size-fits all solution which will both be a huge endeavour to create and maintain, but may also stagger innovation as changing “the service” will have huge consequences. Teams might even hesitate to try a certain idea because they know it will be too hard to get everybody to agree and adapt to the change they need to perform in shared services.
 
