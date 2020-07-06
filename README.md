@@ -17,6 +17,7 @@ This document dives into what this means for infrastructure, architecture and wa
 - [Moving fast without breaking things](#moving-fast-without-breaking-things)
 - [Embrace an open source mindset, regardless of ownership](#embrace-an-open-source-mindset-regardless-of-ownership)
 - [What was the preferred choice a yesterday, might not be the preferred today](#what-was-the-preferred-choice-a-yesterday-might-not-be-the-preferred-today)
+- [Internal services, not shared services](#internal-services-not-shared-services)
 - [Learn to let go of control and embrace chaos](#learn-to-let-go-of-control-and-embrace-chaos)
 
 
@@ -107,6 +108,15 @@ _We make decisions based on assumptions and what we know all the time. But as te
 ___
 
 What was missing from a cloud provider yesterday, might not be missing today. What we needed to develop ourselves yesterday might be possible to outsource and minimize ownership of today. What was the preferred way of doing something, might not be today. It is important to always try to look for solutions outside our daily ecosystem before we conclude on something.
+
+## Internal services, not shared services
+_We should always strive to have as few services as posible central to many parts of our architecture. As shared services introduces organisational complexity, we need to fit other teams needs and we can easly end up in a putting-triangles-in-square-holes situation._
+
+Shared servies has a tendency to grow over time, to fit more and more needs, since it might be useful, or it might be a good fit, or its is just easy to just put it there in the first place. And we should be realy careful when introducing them, and not introduce hasty abstractions if it could just be duplicated. This does not mean however that all decisions to make shared services are wrong, in some cases we need to share data between services or teams. 
+
+In these cases we should however not introduce a shared service with shared ownership between teams. But rather state a clear ownership to an internal services that happends to be used by multiple teams in the organization. The owner of the internal service should treat the other teams as customers. And the service as a product they deliver to them. This means setting a clear mission for the service, listen to the customers, but also give pushback if the customers want something that does not fit the mission. Have a clear message for what the service is for and what it is not. 
+
+Some guding priciples then introducing an interal sercice would be, keep it small and simple, solve one thing really well. Be clear and validate, do not expect the user to know the internals of your service. If something might fit in the service, don't put it there.
 
 ## Learn to let go of control and embrace chaos 
 _As the company and the complexity of our software grows, we will inevitably feel that we lose more and more control. And our focus on autonomy will make this feeling of chaos come sooner than in a strictly ruled organization. But make no mistake, in any organization the sense of control will fade when the complexity gets big enough._
