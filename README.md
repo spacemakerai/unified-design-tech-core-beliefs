@@ -116,7 +116,11 @@ Shared services have a tendency to grow over time, to fit more and more needs, s
 
 In these cases, we should however not introduce a shared service with shared ownership between teams. But rather state clear ownership to an internal service that happens to be used by multiple teams in the organization. The owner of the internal service should treat the other teams as customers. And the service as a product they deliver to them. This means setting a clear mission for the service, listen to the customers, but also give pushback if the customers want something that does not fit the mission. Have a clear message for what the service is for and what it is not. 
 
-Some guiding principles then introducing an internal service would be, keep it small and simple, solve one thing well. Be clear and validate, do not expect the user to know the internals of your service. If something might fit in the service, don't put it there.
+A few guiding principles when introducing an internal service:
+
+- Keep it small and simple, solve one thing well
+- Document the API (and keep it up to date)
+- Validate- don't expect others to know the internals of your service
 
 ## Learn to let go of control and embrace chaos 
 _As the company and the complexity of our software grows, we will inevitably feel that we lose more and more control. And our focus on autonomy will make this feeling of chaos come sooner than in a strictly ruled organization. But make no mistake, in any organization the sense of control will fade when the complexity gets big enough._
