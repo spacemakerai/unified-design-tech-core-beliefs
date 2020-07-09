@@ -11,11 +11,13 @@ This document dives into what this means for infrastructure, architecture and wa
 - [There is no perfect answer - The Art of Compromise](#there-is-no-perfect-answer---the-art-of-compromise)
 - [Prefer sharing knowledge _over_ sharing code](#prefer-sharing-knowledge-over-sharing-code)
 - [Minimize ownership, make it somebody else’s problem](#minimize-ownership-make-it-somebody-elses-problem)
+- [Avoid “leaky” abstractions](#avoid-leaky-abstractions)
 - [You ain’t gonna need it](#you-aint-gonna-need-it)
 - [Choose simple over easy](#choose-simple-over-easy)
 - [Moving fast without breaking things](#moving-fast-without-breaking-things)
 - [Embrace an open source mindset, regardless of ownership](#embrace-an-open-source-mindset-regardless-of-ownership)
 - [What was the preferred choice a yesterday, might not be the preferred today](#what-was-the-preferred-choice-a-yesterday-might-not-be-the-preferred-today)
+- [Internal services, not shared services](#internal-services-not-shared-services)
 - [Learn to let go of control and embrace chaos](#learn-to-let-go-of-control-and-embrace-chaos)
 
 
@@ -23,7 +25,7 @@ This document dives into what this means for infrastructure, architecture and wa
 _Ultimately we want to optimize for time to value, and we believe the biggest driver is a team's ability to be fully autonomous. Instead of the traditional approach of focusing on consistency and reuse, an autonomous team will tend to create decoupled, messy, duplicated and emergent architectures._
 ___
 
-It is a common reflex for software developers to strive for consistency and reuse, hoping you can achieve some sort of control of the total system and to make sure you don’t waste resources by building the same things twice. In the long run though, these architectures often end up as very hard to change, and can require whole development teams dedicated to maintaining these services and shared platforms.
+It is a common reflex for software developers to strive for consistency and reuse, hoping you can achieve some sort of control of the total system and to make sure you don’t waste resources by building the same things twice. In the long run though, these architectures often end up as very hard to change.
 
 The more a component is reused the more it will need to grow into a one-size-fits all solution which will both be a huge endeavour to create and maintain, but may also stagger innovation as changing “the service” will have huge consequences. Teams might even hesitate to try a certain idea because they know it will be too hard to get everybody to agree and adapt to the change they need to perform in shared services.
 
@@ -55,7 +57,10 @@ So, start every day looking for stuff we could throw away and replace with somet
 
 Own as little as possible, and build the things you own so that others don’t need to know or care how it works. This reduces time to value dramatically, as you can move forward independently of both the services you consume and of your consumers.
 
-Avoid “leaky” abstractions between domains and ownerships - your domain specific requirements should not be encoded in a service or component owned by others. Squads should strive not to have dependencies on each other, making them subject to the prioritizations in other squads. As we are working on the same product, with shared data, there will always be a need for squads to interact. These interactions should be as static and well defined as possible. 
+## Avoid “leaky” abstractions
+
+_Avoid “leaky” abstractions between domains and ownerships - your domain specific requirements should not be encoded in a service or component owned by others. Squads should strive not to have dependencies on each other, making them subject to the prioritizations in other squads. As we are working on the same product, with shared data, there will always be a need for squads to interact. These interactions should be as static and well defined as possible._
+___ 
 
 _Example_: if a service that stores geometry needs to adhere to a certain structure to work with your service, but this requirement is true only for your service - not for other users of the service. This would limit the ones that own the service from innovating at their own pace - OR it would cause your service to often crash unexpectedly. The abstraction is “leaky”. 
 
@@ -103,6 +108,15 @@ _We make decisions based on assumptions and what we know all the time. But as te
 ___
 
 What was missing from a cloud provider yesterday, might not be missing today. What we needed to develop ourselves yesterday might be possible to outsource and minimize ownership of today. What was the preferred way of doing something, might not be today. It is important to always try to look for solutions outside our daily ecosystem before we conclude on something.
+
+## Internal services, not shared services
+_We should always strive to have as few services as possible central to many parts of our architecture. As shared services introduce organizational complexity, we need to fit other teams needs and we can easily end up in a putting-triangles-in-square-holes situation._
+
+Shared services have a tendency to grow over time, to fit more and more needs, since it might be useful, or it might be a good fit, or it is just easy to just put it there in the first place. And we should be really careful when introducing them, and not introduce hasty abstractions if it could just be duplicated. This does not mean however that all decisions to make shared services are wrong, in some cases we need to share data between services or teams. 
+
+In these cases, we should however not introduce a shared service with shared ownership between teams. But rather state clear ownership to an internal service that happens to be used by multiple teams in the organization. The owner of the internal service should treat the other teams as customers. And the service as a product they deliver to them. This means setting a clear mission for the service, listen to the customers, but also give pushback if the customers want something that does not fit the mission. Have a clear message for what the service is for and what it is not. 
+
+Some guiding principles then introducing an internal service would be, keep it small and simple, solve one thing well. Be clear and validate, do not expect the user to know the internals of your service. If something might fit in the service, don't put it there.
 
 ## Learn to let go of control and embrace chaos 
 _As the company and the complexity of our software grows, we will inevitably feel that we lose more and more control. And our focus on autonomy will make this feeling of chaos come sooner than in a strictly ruled organization. But make no mistake, in any organization the sense of control will fade when the complexity gets big enough._
