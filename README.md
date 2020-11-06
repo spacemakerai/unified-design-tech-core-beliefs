@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# Core beliefs, our guiding statements for time to value; speed, quality, reliability and agility
+# Tech core beliefs, our guiding statements for time to value; speed, quality, reliability and agility
 
 This document was created on the belief that instead of making strict rules on how we build products and services in Spacemaker, we believe in alignment on how, by creating some guiding principles. We strongly believe that time to value is best served by autonomy and thereby letting our people choose the right tool for the job every time. In that we also say that we choose a little chaos over control and big platform architectures. 
 
