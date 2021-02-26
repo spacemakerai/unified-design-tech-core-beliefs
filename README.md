@@ -16,7 +16,7 @@ This document dives into what this means for infrastructure, architecture and wa
 - [Choose simple over easy](#choose-simple-over-easy)
 - [Moving fast without breaking things](#moving-fast-without-breaking-things)
 - [Embrace an open source mindset, regardless of ownership](#embrace-an-open-source-mindset-regardless-of-ownership)
-- [What was the preferred choice a yesterday, might not be the preferred today](#what-was-the-preferred-choice-a-yesterday-might-not-be-the-preferred-today)
+- [What was the preferred choice yesterday, might not be the preferred today](#what-was-the-preferred-choice-a-yesterday-might-not-be-the-preferred-today)
 - [Internal services, not shared services](#internal-services-not-shared-services)
 - [Learn to let go of control and embrace chaos](#learn-to-let-go-of-control-and-embrace-chaos)
 
