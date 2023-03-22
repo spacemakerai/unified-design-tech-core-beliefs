@@ -97,6 +97,12 @@ So, you must always make sure to do the necessary QA on anything you release. If
 
 Time to value and reliability go hand in hand - done right, the efforts to maintain one will help the other. 
 
+## It should be as safe as possible to fail
+_Evidently, it is impossible to prevent failures or someone from breaking something at some point in time. A typical reaction to avoid failures is to add multiple layers of processes, but layers of processes will still be unable to prevent them from ever happening. One should move fast without breaking things but also embrace that something will fail. As a consequence, we use isolation to reduce impact when mistakes happen._
+___
+
+By focusing the isolation, a team can better control the side effects of the changes they are doing and the impact when mistakes happen. Also, a team should avoid tight coupling and dependencies between other teams services where possible, reducing chances for cascading failures. 
+
 ## Embrace an open source mindset, regardless of ownership
 
 _Even though ownership is clearly defined, we must always encourage and celebrate the input and help of others - whether it means another squad writing pull requests in your code or someone from the “outside” challenging your technical choices._
@@ -111,6 +117,7 @@ What was missing from a cloud provider yesterday, might not be missing today. Wh
 
 ## Internal services, not shared services
 _We should always strive to have as few services as possible central to many parts of our architecture. As shared services introduce organizational complexity, we need to fit other teams needs and we can easily end up in a putting-triangles-in-square-holes situation._
+___
 
 Shared services have a tendency to grow over time, to fit more and more needs, since it might be useful, or it might be a good fit, or it is just easy to just put it there in the first place. And we should be really careful when introducing them, and not introduce hasty abstractions if it could just be duplicated. This does not mean however that all decisions to make shared services are wrong, in some cases we need to share data between services or teams. 
 
