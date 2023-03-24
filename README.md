@@ -99,10 +99,10 @@ So, you must always make sure to do the necessary QA on anything you release. If
 Time to value and reliability go hand in hand - done right, the efforts to maintain one will help the other. 
 
 ## It should be as safe as possible to fail
-_Evidently, it is impossible to prevent failures or someone from breaking something at some point in time. A typical reaction to avoid failures is to add multiple layers of processes, but layers of processes will still be unable to prevent them from ever happening. One should move fast without breaking things but also embrace that something will fail. As a consequence, we use isolation to reduce impact when mistakes happen._
+_Evidently, it is impossible to prevent failures or someone from breaking something at some point in time. A typical reaction to avoid failures is to add multiple layers of processes, but layers of processes will still be unable to prevent them from ever happening. One should move fast without breaking things but also embrace that something will fail. Consequently, we reduce the impact of mistakes by designing services with technical isolation_
 ___
 
-By focusing the isolation, a team can better control the side effects of the changes they are doing and the impact when mistakes happen. Also, a team should avoid tight coupling and dependencies between other teams services where possible, reducing chances for cascading failures. 
+By keeping isolation, fault tolerance, and resilience in mind, we focus on making explicit and deliberate choices about a service's internal and external dependencies to make it easy to reason about what the service depends on and to which degree, as well as to maintain a high degree of confidence about what change can trigger side effects. In addition, avoiding tight coupling and dependencies between other teams' services reduces the chances of cascading failures. 
 
 ## Embrace an open source mindset, regardless of ownership
 
